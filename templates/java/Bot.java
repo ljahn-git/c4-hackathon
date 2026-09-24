@@ -31,8 +31,10 @@ public class Bot {
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (board[i][j] = 0) {
-                    
+                if (board[i][j] = 1) {
+                    offTemperature[i]++;
+                } else if (board[i][j] == 2) {
+                    defTemperature[i]++;
                 }
             }
         }
