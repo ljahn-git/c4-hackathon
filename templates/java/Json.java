@@ -9,7 +9,7 @@ import java.util.Map;
  * Server.java uses this instead.
  *
  * Supports objects, arrays, strings (with escapes), numbers, true/false/null.
- * Parsed values are plain Java objects: Map<String,Object>, List<Object>,
+ * Parsed values are plain Java objects: Map<String,Object>, List<Object>
  * String, Double, Boolean, or null.
  */
 final class Json {
