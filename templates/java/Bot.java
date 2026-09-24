@@ -63,14 +63,15 @@ public class Bot {
                 if (offTemp[i] > maxIndex) {
                     maxIndex = offTemp[i];
                 }
+                bestMove = maxIndex;
             }
         }
 
         int diagonalChange = RANDOM.nextInt(0,3);
         if (diagonalChange == 0) {
-            bestMove = maxIndex + 1;
+            bestMove++;
         } else if (diagonalChange == 1) {                
-            bestMove = maxIndex - 1;
+            bestMove--;
         }
 
         if (bestMove > 7) {
