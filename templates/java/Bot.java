@@ -26,6 +26,19 @@ public class Bot {
     // persist between calls: the arena may restart your bot mid-game.
     public static int chooseMove(int[][] board, int you, MoveInfo info) {
         List<Integer> moves = legalMoves(board);
+        int[] offTemperature = {0, 0, 0, 0, 0, 0, 0, 0};
+        int[] defTemperature = {0, 0, 0, 0, 0, 0, 0, 0};
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board[i][j] = 0) {
+                    
+                }
+            }
+        }
+
+
+
         return moves.get(RANDOM.nextInt(moves.size()));
     }
 
