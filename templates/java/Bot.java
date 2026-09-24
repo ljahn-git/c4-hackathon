@@ -31,17 +31,42 @@ public class Bot {
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (board[i][j] = 1) {
+                if (board[i][j] == you) {
                     offTemperature[i]++;
-                } else if (board[i][j] == 2) {
+                } else if (board[i][j] != 0) {
                     defTemperature[i]++;
                 }
             }
         }
 
 
+        int moved = getBestMove(offTemperature, defTemperature, board, you, info);
+        return moved;
+    }
 
-        return moves.get(RANDOM.nextInt(moves.size()));
+    public static int getBestMove(int[] offTemp, int[] defTemp, int[][] board, int you, MoveInfo info) {
+        int bestMove = 0;
+        int mode = RANDOM.nextInt(0,3);
+        if (mode == 0) {
+            // Defensive
+            int maxIndex = 0;
+            for(int i = 0; i < defTemp.length; i++) {
+                if (defTemp[i] > maxIndex) {
+                    maxIndex = defTemp[i];
+                }
+            }
+            bestMove = maxIndex;
+        }
+        if (mode == 1 || mode == 2) {
+            int maxIndex = 0;
+            for(int i = 0; i < offTemp.length; i++) {
+                if (offTemp[i] > maxIndex) {
+                    maxIndex = offTemp[i];
+                }
+            }
+            bestMove = maxIndex;
+        }
+        return bestMove;
     }
 
     public static List<Integer> legalMoves(int[][] board) {
