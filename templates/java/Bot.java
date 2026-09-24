@@ -64,12 +64,13 @@ public class Bot {
                     maxIndex = offTemp[i];
                 }
             }
-            int diagonalChange = RANDOM.nextInt(0,3);
-            if (diagonalChange == 0) {
-                bestMove = maxIndex + 1;
-            } else if (diagonalChange == 1) {
-                bestMove = maxIndex - 1;
-            }
+        }
+
+        int diagonalChange = RANDOM.nextInt(0,3);
+        if (diagonalChange == 0) {
+            bestMove = maxIndex + 1;
+        } else if (diagonalChange == 1) {                
+            bestMove = maxIndex - 1;
         }
 
         if (bestMove > 7) {
