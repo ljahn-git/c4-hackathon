@@ -39,15 +39,14 @@ public class Bot {
             }
         }
 
-
         int moved = getBestMove(offTemperature, defTemperature, board, you, info);
         return moved;
     }
 
     public static int getBestMove(int[] offTemp, int[] defTemp, int[][] board, int you, MoveInfo info) {
         int bestMove = 0;
-        int mode = RANDOM.nextInt(0,3);
-        if (mode == 0) {
+        int mode = RANDOM.nextInt(0,10);
+        if (mode >= 9) {
             // Defensive
             int maxIndex = 0;
             for(int i = 0; i < defTemp.length; i++) {
@@ -57,7 +56,7 @@ public class Bot {
             }
             bestMove = maxIndex;
         }
-        if (mode == 1 || mode == 2) {
+        else {
             int maxIndex = 0;
             for(int i = 0; i < offTemp.length; i++) {
                 if (offTemp[i] > maxIndex) {
@@ -66,7 +65,7 @@ public class Bot {
                 bestMove = maxIndex;
             }
         }
-
+/*
         int diagonalChange = RANDOM.nextInt(0,3);
         if (diagonalChange == 0) {
             bestMove++;
@@ -80,6 +79,7 @@ public class Bot {
         if (bestMove < 0){
             bestMove = 0;
         }
+        */
         return bestMove;
     }
 
